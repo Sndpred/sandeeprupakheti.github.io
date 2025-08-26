@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sandeep Rupakheti - Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+</style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<!-- Header -->
+<header class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white p-16 md:p-24 text-center shadow-lg rounded-b-lg">
+  <h1 class="text-5xl md:text-7xl font-extrabold mb-2 leading-tight">Sandeep Rupakheti</h1>
+  <p class="text-xl md:text-3xl font-light opacity-90">Data Scientist / Data Analyst | Python • SQL • Machine Learning • Data Visualization</p>
+</header>
+
+<main class="container mx-auto px-4 py-8 md:py-12 max-w-7xl">
+
+  <!-- Projects Section -->
+  <section id="projects" class="mb-12 md:mb-16 bg-white p-6 md:p-8 rounded-xl shadow-md">
+    <!-- Updated heading to be more prominent -->
+    <h2 class="text-4xl font-extrabold text-center mb-6 text-purple-700">My Projects</h2>
+    <!-- Project Filter Buttons -->
+    <div class="flex flex-wrap justify-center gap-3 mb-8">
+      <button class="filter-btn bg-purple-600 text-white px-4 py-2 rounded-full shadow-md" data-category="all">All Projects</button>
+      <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full shadow-md" data-category="data-science">Data Science</button>
+      <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full shadow-md" data-category="data-analytics">Data Analytics</button>
+      <button class="filter-btn bg-gray-200 text-gray-700 px-4 py-2 rounded-full shadow-md" data-category="data-engineering">Data Engineering</button>
+    </div>
+    <div id="project-cards" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"></div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="mb-12 md:mb-16 bg-white p-6 md:p-8 rounded-xl shadow-md">
+    <!-- Updated heading to be more prominent -->
+    <h2 class="text-4xl font-extrabold text-center mb-6 text-purple-700">Certifications</h2>
+    <div id="cert-cards" class="grid gap-4 md:grid-cols-2 lg:grid-cols-3"></div>
+    <div id="cert-buttons" class="text-center mt-8">
+      <button id="view-all-cert" class="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-full shadow-lg hover:bg-purple-700 transition-colors duration-300">View All Certifications</button>
+    </div>
+  </section>
+</main>
+
+<!-- Contact Section - 'Get in Touch' changed to 'GetinTouch' -->
+<section id="contact" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white p-12 md:p-16 text-center shadow-inner">
+  <h2 class="text-4xl md:text-5xl font-bold mb-8 flex items-center justify-center gap-4">✉️ GetinTouch</h2>
+  <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+    <a href="https://github.com/sndpred" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-full shadow-lg hover:bg-gray-100 hover:text-purple-700 transition-all duration-300">GitHub</a>
+    <a href="https://www.linkedin.com/in/sandeep-rupakheti/" target="_blank" class="flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-full shadow-lg hover:bg-gray-100 hover:text-purple-700 transition-all duration-300">LinkedIn</a>
+    <a href="mailto:sndpred@gmail.com" class="flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-full shadow-lg hover:bg-gray-100 hover:text-purple-700 transition-all duration-300">Email</a>
+  </div>
+</section>
+
+<!-- Footer - 'All rights reserved' changed to 'Allrightsreserved' -->
+<footer class="w-full bg-gray-800 text-white text-center py-6 shadow-inner">
+  <p>&copy; 2025 Sandeep Rupakheti. Allrightsreserved.</p>
+</footer>
+
+<script>
+const projects = {
+  'data-science': [
+    { title:'Amazon Echo Review Sentiment Analysis (NLP)', image:'https://placehold.co/300x200/ADD8E6/000000?text=Sentiment+Analysis', tech:['Python','NLTK','Scikit-learn'], github:'https://github.com/Sndpred/amazon-echo-review' },
+    { title:'Stock Price Prediction', image:'https://placehold.co/300x200/ADD8E6/000000?text=Stock+Prediction', tech:['Python','TensorFlow','Keras','Pandas'], github:'https://github.com/Sndpred/stockpriceprediction' },
+    { title:'Customer Churn Prediction', image:'https://placehold.co/300x200/ADD8E6/000000?text=Churn+Prediction', tech:['Python','Scikit-learn','XGBoost','Plotly'], github:'https://github.com/Sndpred/Customer-Churn-Prediction' },
+    { title:'Predicting PC Failure', image:'https://placehold.co/300x200/ADD8E6/000000?text=PC+Failure', tech:['Python','RandomForest','PySpark'], github:'#' },
+    { title:'House Price Prediction', image:'https://placehold.co/300x200/ADD8E6/000000?text=House+Prices', tech:['Python','Scikit-learn','Pandas','Seaborn'], github:'https://github.com/Sndpred/DataAnalyticsDailyProject/tree/main/HousePricePrediction' },
+    { title:'Customer Review Analysis – British Airways Dataset (NLP)', image:'https://placehold.co/300x200/ADD8E6/000000?text=BA+Reviews+NLP', tech:['Python','SpaCy','LDA','Dash'], github:'https://github.com/Sndpred/predictive_modelling_of_customer_bookings' },
+  ],
+  'data-analytics': [
+    { title:'EDA and Data Cleaning in SQL Server', image:'https://placehold.co/300x200/ADD8E6/000000?text=SQL+EDA', tech:['SQL Server','T-SQL'], github:'https://github.com/Sndpred/EDA-DataCleaning' },
+    { title:'EDA with Python and Pandas', image:'https://placehold.co/300x200/ADD8E6/000000?text=Python+EDA', tech:['Python','Pandas','Matplotlib','Seaborn'], github:'#' },
+    { title:'Tableau Dashboards', image:'https://placehold.co/300x200/ADD8E6/000000?text=Tableau+Dashboards', tech:['Tableau'], github:'https://public.tableau.com/app/profile/sandeep.rupakheti/viz/Airbnb_Project_17158844817100/Dashboard1' },
+    { title:'Titanic Dataset Exploration', image:'https://placehold.co/300x200/ADD8E6/000000?text=Titanic+EDA', tech:['Python','Pandas','Seaborn','Plotly'], github:'https://github.com/Sndpred/DataAnalyticsDailyProject/blob/main/Ml_fundamentals.ipynb' },
+    // Moved from 'software-engineering'
+    { title:'Amazon Web Scraper', image:'https://placehold.co/300x200/ADD8E6/000000?text=Amazon+Scraper', tech:['Python','BeautifulSoup','Requests'], github:'https://github.com/Sndpred/webscrape' },
+    { title:'API Data Pull', image:'https://placehold.co/300x200/ADD8E6/000000?text=API+Data+Pull', tech:['Python','Requests','CRON'], github:'https://github.com/Sndpred/APIpull#' },
+    { title:'Web Scrapping for Predictive Modelling(British Airways)', image:'https://placehold.co/300x200/ADD8E6/000000?text=BA+Scraper', tech:['Python','BeautifulSoup'], github:'https://github.com/Sndpred/Web_Scrapping_and_Analysis_for_predictive_modelling' },
+    // Moved from 'data-science'
+    { title:'Sales Dashboard', image:'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', tech:['Tableau','SQL','Excel'], github:'#' },
+  ],
+  'data-engineering': [
+    { title:'Amazon Data Pipeline & Orchestration', image:'https://placehold.co/300x200/ADD8E6/000000?text=ETL+Pipeline', tech:['Python','Airflow','PostgreSQL','Docker'], github:'#' },
+    { title:'Fantasy Premier League (FPL) Data Pipeline', image:'https://placehold.co/300x200/ADD8E6/000000?text=FPL+Pipeline', tech:['Python','PostgreSQL'], github:'https://github.com/Sndpred/FPL_League_Tracker' }
+  ],
+};
+
+const certifications = [
+  { title:"AWS Certified Cloud Practitioner", issuer:"Amazon Web Services", date:"Issued Year: 2025", url:"https://cp.certmetrics.com/amazon/en/public/verify/credential/3fc5908364684d66a3765d8fcacb430c" },
+  { title:"Google Data Analytics Professional Certificate", issuer:"Google", date:"Issued Year: 2025", url:"https://www.credly.com/badges/23acf2e6-8023-4293-a1d3-35746ed7cb7a/print" },
+  { title:"Microsoft & LinkedIn Certified: Career Essentials in Data Analysis", issuer:"Microsoft", date:"Issued Year: 2024", url:"https://www.linkedin.com/learning/certificates/ad05995bba8f865fa751e339413cc65a3faf573e22e523d0bece1a2ff3d94b5d?u=57694233" },
+  { title:"Microsoft & LinkedIn Certified: Career Essentials in Generative AI", issuer:"Microsoft", date:"Issued Year: 2024", url:"https://www.linkedin.com/learning/certificates/ad05995bba8f865fa751e339413cc65a3faf573e22e523d0bece1a2ff3d94b5d?u=57694233" },
+  { title:"Microsoft & LinkedIn Certified: Career Essentials in Software Engineering", issuer:"Microsoft", date:"Issued Year: 2024", url:"https://www.linkedin.com/learning/certificates/8c222883bc8ac77feff9fbf1e358e0feb39f31d56620d245020f098dc693b893?trk=share_certificate" },
+  { title:"Machine Learning", issuer:"Kaggle", date:"Issued 2024", url:"https://www.kaggle.com/learn/certification/sndpred/intermediate-machine-learning" },
+  { title:"SQL", issuer:"Kaggle", date:"Issued Year: 2024", url:"https://www.kaggle.com/learn/certification/sndpred/intro-to-sql" }
+];
+
+// Functions
+function renderProjects(category='all') {
+  const container = document.getElementById('project-cards');
+  container.innerHTML = '';
+  let filtered = category === 'all' ? Object.values(projects).flat() : projects[category] || [];
+  filtered.forEach(p => {
+    const techBadges = p.tech.map(t => `<span class="px-3 py-1 bg-blue-200 text-blue-800 text-xs font-medium rounded-full">${t}</span>`).join(' ');
+    container.innerHTML += `
+      <a href="${p.github}" target="_blank" class="block bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition-shadow duration-300 transform hover:-translate-y-1 group">
+        <img src="${p.image}" alt="${p.title}" class="w-full h-40 object-cover rounded-md mb-4 group-hover:scale-105 transition-transform duration-300" />
+        <h3 class="text-xl font-semibold mb-2 text-blue-800 group-hover:text-purple-700 transition-colors duration-300">${p.title}</h3>
+        <div class="flex flex-wrap gap-2 mt-2">${techBadges}</div>
+      </a>
+    `;
+  });
+}
+
+function renderCertifications(viewAll = false) {
+  const container = document.getElementById('cert-cards');
+  container.innerHTML = '';
+  const certsToRender = viewAll ? certifications : certifications.slice(0, 4);
+  certsToRender.forEach(c => {
+    container.innerHTML += `
+      <a href="${c.url}" target="_blank" class="block bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition-shadow duration-300 transform hover:-translate-y-1 group">
+        <h3 class="text-xl font-semibold mb-2 text-blue-800 group-hover:text-purple-700 transition-colors duration-300">${c.title}</h3>
+        <p class="text-gray-700 text-sm">Issued by: ${c.issuer}</p>
+        <p class="text-gray-600 text-xs mt-1">${c.date}</p>
+      </a>
+    `;
+  });
+}
+
+// Initial render
+renderProjects();
+renderCertifications();
+
+// Filter button events
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => {
+      b.classList.remove('bg-purple-600', 'text-white');
+      b.classList.add('bg-gray-200', 'text-gray-700');
+    });
+    btn.classList.remove('bg-gray-200', 'text-gray-700');
+    btn.classList.add('bg-purple-600', 'text-white');
+    renderProjects(btn.dataset.category);
+  });
+});
+
+// View certifications toggle
+document.getElementById('cert-buttons').addEventListener('click', (event) => {
+  if (event.target.id === 'view-all-cert') {
+    renderCertifications(true);
+    event.target.textContent = 'View Less';
+    event.target.id = 'view-less-cert';
+  } else if (event.target.id === 'view-less-cert') {
+    renderCertifications(false);
+    event.target.textContent = 'View All Certifications';
+    event.target.id = 'view-all-cert';
+  }
+});
+</script>
+</body>
+</html>
